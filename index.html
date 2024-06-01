@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Code Mirror</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .center {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Code Mirror -->
+    <div class="center">
+        <textarea name="editor" id="editor" cols="30" rows="10">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Perferendis cupiditate culpa facere tempore magni ad placeat maxime labore ab, 
+                inventore incidunt praesentium voluptatem odio nesciunt?</p>
+        </textarea>
+
+        <script>
+            var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                mode: "xml",
+                theme: "dracula",
+                lineNumber: true
+            });
+        </script>
+    </div>
+</body>
+</html>
