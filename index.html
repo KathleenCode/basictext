@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/meta.min.js" integrity="sha512-/2x+sfL5ERHfoViXm/UncFBzaD54f2bkjEui6w2IheEUafG2gcHJv3gQ4VDIqNr+LuApQwpnsjjrEMXI43nPzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/ayu-dark.min.css" integrity="sha512-mV3RUXi1gt22jDb4UyRBFhZVFgAIiOfRE6ul+2l1Hcj6glyg6x4xlnjPH+neGm/t6XrFmsMRu4++McQu0asjqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/3024-day.min.css" integrity="sha512-18oLgbbfP5aJEwUUaEBLD/e5HnJtTuPOmdevOgMWL8wdGn6zNVLY+yAgOupSfrbdT174IRJDdak3XeBqdYy7Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/3024-night.min.css" integrity="sha512-SbB0juc9/nEA5PEN7S+lnglc7wADe2DLKZKXn3D+eyebL06fTbFHNzgMlpX9oqFjWEKZ6uH7zNCUSv+j9Dpwpw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/ambiance-mobile.min.css" integrity="sha512-N5MsvoLN5K06W/L/88rGQLgTAkHH5V9EkEHbTbNm7ctLZTbLnUciu8CR0A/BzNRlQ+qgcT/2Ddvtd47vtq9ggg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Code Mirror</title>
 
     <style>
@@ -13,12 +19,13 @@
             box-sizing: border-box;
         }
         .center {
-            width: 80%;
+            width: 90%;
             margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 25px;
+            margin: 25px;
+            padding: 30px;
         }
     </style>
 </head>
@@ -26,6 +33,7 @@
     <!-- Code Mirror -->
     <div class="center">
         <textarea name="editor" id="editor" cols="30" rows="10">
+            <small>This is a basic text editor</small>
             <h1>Hello World</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Perferendis cupiditate culpa facere tempore magni ad placeat maxime labore ab, 
@@ -34,9 +42,11 @@
 
         <script>
             var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-                mode: "xml",
-                theme: "dracula",
-                lineNumber: true
+                mode: "meta",
+                theme: "ayu-dark",
+                lineNumbers: true,
+                showCursorWhenSelecting: true,
+                cursorHeight: 0.7,
             });
         </script>
     </div>
